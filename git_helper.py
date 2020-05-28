@@ -1,15 +1,30 @@
 from tkinter import Tk, messagebox
 from tkouter import *
 import random
+from github import Github
 
 
 class HelloWorld(TkOutWidget):
     layout = """
 <html>
     <head>
-        <title> Random Selector </title>
+        <title> Git Helper </title>
+        <menu>
+            <menu label="Command" underline="0">
+                <command command="{self.sel}"> Select </command>
+                <command command="{self.add}"> Add </command>
+                <separator />
+                <command command="{self.add}"> Quit </command>
+            </menu>
+            <menu label="View" underline="0">
+                <checkbutton label="Hide items" onvalue="1" offvalue="0"
+                 variable="{self.add}" command="{self.add}" />
+            </menu>
+        </menu>
     </head>
+    
     <body>
+        
         <left>
             <entry width="30" textvariable="{self.item.var}" />
             <button width="8" text="Select" command="{self.sel}" />
@@ -22,6 +37,7 @@ class HelloWorld(TkOutWidget):
 </html>
 """
     item = StringField(default='Item Name')
+
     def hello(self):
         messagebox.showinfo('welcome to tkouter', 'hello world')
 
