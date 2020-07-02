@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
-tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.INFO)
 
 
 class CNNLogisticClassification:
@@ -252,7 +252,6 @@ for i in range(0,6):
     img = np.reshape(img, (5,5))
     axis[i].imshow(img, cmap='gray')
 plt.show()
-
 
 
 fig, axis = plt.subplots(12, 8, figsize=(10, 12))
